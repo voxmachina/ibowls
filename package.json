@@ -1,0 +1,29 @@
+{
+  "name": "ibowls",
+  "version": "1.0.0",
+  "description": "Tibetan singing bowls ... with Javascript!",
+  "main": "index.html",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^0.8.0",
+    "grunt-contrib-copy": "^0.8.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/voxmachina/ibowls"
+  },
+  "keywords": [
+    "javascript",
+    "canvas",
+    "html5",
+    "webaudio",
+    "creative"
+  ],
+  "author": "Pedro Eugenio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/voxmachina/ibowls/issues"
+  },
+  "homepage": "https://github.com/voxmachina/ibowls"
+}
