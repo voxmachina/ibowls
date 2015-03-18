@@ -1,4 +1,7 @@
 # iBowls
+
+See it now online at: http://igeni.us/bowls
+
 Tibetan singing bowls ... with Javascript!
 
 iBowls is an experiment on chromotherapy and tibetan singing bowls with javascript.
