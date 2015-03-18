@@ -20,7 +20,7 @@ The project is using processing JS brother, namely p5
 Feel free to fork it and play around with the code, I've tried hard to document everything to be really 
 easy for anyone to understand it and modify it.
 
-I'm using Grunt for the build process, just run the single task to have a build artifact inside dist/ folder:
+I'm using Grunt for the build process, just run the single task to have a build optimized version inside dist/ folder:
 
  * grunt build
 
