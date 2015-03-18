@@ -31,6 +31,10 @@ module.exports = function(grunt) {
 							endingContent;
 					}
 				}
+			},
+			icon: {
+				src: 'favicon.ico',
+				dest: 'dist/favicon.ico'
 			}
 		},
 
