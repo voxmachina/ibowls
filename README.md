@@ -23,3 +23,6 @@ easy for anyone to understand it and modify it.
 I'm using Grunt for the build process, just run the single task to have a build artifact inside dist/ folder:
 
  * grunt build
+
+# License
+ * MIT
