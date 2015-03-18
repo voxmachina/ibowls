@@ -2,11 +2,21 @@
 // Application
 //
 var iBowls = new IBowls();
-
+//
+// Events, pick mood from web interface
+//
+$(document).ready(function() {
+	$(".mood").click(function(evt) {
+		evt.preventDefault();
+		var $handler = $(evt.currentTarget);
+		iBowls.sequence = $handler.attr('id');
+		$(".mood").removeClass("active");
+		$handler.addClass("active");
+	});
+});
 //
 // processing loop
 //
-
 /**
  * Preload sound sources
  */
@@ -19,11 +29,6 @@ function preload() {
  */
 function setup() {
 	var bowl, sequence = iBowls.focusSequence();
-
-	$("body").css({
-		"padding": 0,
-		"margin": 0
-	});
 
 	createCanvas(iBowls.w, iBowls.h);
 
@@ -48,7 +53,11 @@ function setup() {
  * The draw loop
  */
 function draw() {
-	var sequence = iBowls.focusSequence();
+	var sequence = iBowls.getSequence();
+
+	if (typeof(sequence) === 'undefined' || sequence === null) {
+		return;
+	}
 
 	for (var i = 0; i < iBowls.bowls.length; i++) {
 		iBowls.bowls[i].play();

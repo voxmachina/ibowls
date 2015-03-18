@@ -65,11 +65,24 @@ module.exports = function(grunt) {
 					]
 				}
 			}
+		},
+
+		cssmin: {
+			options: {
+				shorthandCompacting: false,
+				roundingPrecision: -1
+			},
+			target: {
+				files: {
+					'dist/css/style.css': ['css/style.css']
+				}
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-	return grunt.registerTask('build', ['copy', 'uglify']);
+	return grunt.registerTask('build', ['copy', 'uglify', 'cssmin']);
 };

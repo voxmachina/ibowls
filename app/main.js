@@ -34,6 +34,8 @@ IBowls.prototype = {
 	globalReverbCarrier: null,
 	/* note scale */
 	noteScale: 0.5,
+	/* current sequence to play */
+	sequence: "focus",
 	/**
 	 * Application initialization
 	 */
@@ -60,13 +62,44 @@ IBowls.prototype = {
 		};
 	},
 	/**
+	 * Returns the current sequence to play
+	 */
+	getSequence: function() {
+		switch(this.sequence) {
+			case 'focus': return this.focusSequence(); break;
+			case 'relax': return this.relaxSequence(); break;
+			case 'heal': return this.relaxSequence(); break;
+			default: break;
+		}
+	},
+	/**
+	 * Returns a relax sequence
+	 * @returns {{notes: *[], length: number}}
+	 */
+	healSequence: function() {
+		return {
+			notes: [this.notes.f, this.notes.fg, this.notes.g, this.notes.b, this.notes.c],
+			length: 5
+		};
+	},
+	/**
+	 * Returns a relax sequence
+	 * @returns {{notes: *[], length: number}}
+	 */
+	relaxSequence: function() {
+		return {
+			notes: [this.notes.e, this.notes.b, this.notes.d, this.notes.a],
+			length: 4
+		};
+	},
+	/**
 	 * Returns a focus sequence
 	 *
-	 * @returns {*[]}
+	 * @returns {{notes: *[], length: number}}
 	 */
 	focusSequence: function() {
 		return {
-			notes: [this.notes.a, this.notes.ab, this.notes.d, this.notes.cd],
+			notes: [this.notes.a, this.notes.c, this.notes.d, this.notes.g],
 			length: 4
 		};
 	}
